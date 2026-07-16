@@ -3,5 +3,8 @@ __pycache__/
 *.pyc
 .venv/
 
+# Downloaded course book data
+books/
+
 # Claude Code local settings (may contain machine-specific permissions)
 .claude/settings.local.json
