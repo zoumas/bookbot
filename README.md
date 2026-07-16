@@ -64,3 +64,7 @@ Setup-only lessons (environment, workspace conventions, etc.) are done directly.
 4. **Implement** — work through the tasks, then verify the result against what the lesson expects.
 
 Each lesson's feature builds on the same codebase incrementally, so the specs and plans accumulate alongside the bookbot program itself.
+
+## Certification
+
+[![Boot.dev Build a Bookbot in Python certificate](https://qvault-webapp-dynamic-assets.storage.googleapis.com/certificates/884cbd55-ce5e-4a0b-8e54-36569405047e.jpeg?v=1784241801)](https://www.boot.dev/certificates/884cbd55-ce5e-4a0b-8e54-36569405047e)
