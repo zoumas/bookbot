@@ -1,11 +1,16 @@
 def main() -> None:
-    contents = get_book_text("./books/frankenstein.txt")
-    print(contents)
+    text = get_book_text("./books/frankenstein.txt")
+    num_words = count_words(text)
+    print(f"Found {num_words} total words")
 
 
 def get_book_text(filepath: str) -> str:
     with open(filepath, encoding="utf-8") as f:
         return f.read()
+
+
+def count_words(text: str) -> int:
+    return len(text.split())
 
 
 if __name__ == "__main__":
