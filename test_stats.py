@@ -1,6 +1,6 @@
 import pytest
 
-from stats import count_words
+from stats import count_characters, count_words
 
 
 @pytest.mark.parametrize(
@@ -16,3 +16,17 @@ from stats import count_words
 )
 def test_count_words(text: str, want: int) -> None:
     assert count_words(text) == want
+
+
+@pytest.mark.parametrize(
+    ("text", "want"),
+    [
+        pytest.param("", {}, id="empty"),
+        pytest.param("Boot!", {"b": 1, "o": 2, "t": 1, "!": 1}, id="lesson-example"),
+        pytest.param("AaA", {"a": 3}, id="case-folding"),
+        pytest.param("\na b\n", {"a": 1, " ": 1, "b": 1, "\n": 2}, id="whitespace"),
+        pytest.param("Éé", {"é": 2}, id="non-ascii"),
+    ],
+)
+def test_count_characters(text: str, want: dict[str, int]) -> None:
+    assert count_characters(text) == want
