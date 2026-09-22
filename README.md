@@ -1,5 +1,7 @@
 # bookbot
 
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
+
 A command-line text analyzer written in Python, built as part of boot.dev's guided
 project [Build a BookBot in Python](https://www.boot.dev/courses/build-bookbot-python).
 
