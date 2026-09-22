@@ -55,3 +55,18 @@ Then run BookBot on it:
 ```sh
 python3 main.py books/frankenstein.txt
 ```
+
+## Development
+
+The project is managed with [uv](https://docs.astral.sh/uv/). BookBot itself
+uses only the standard library; `pytest` and `ruff` are development
+dependencies.
+
+```sh
+uv sync                 # create .venv and install dev dependencies
+uv run pytest           # run the tests
+uv run ruff check       # lint
+uv run ruff format      # format
+```
+
+Tests are table-driven with `pytest.mark.parametrize`, one named case per row.
