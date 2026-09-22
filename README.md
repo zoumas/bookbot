@@ -41,6 +41,17 @@ command-line arguments.
 
 ## Usage
 
+Books are not committed to the repository. Download the sample book first:
+
+```sh
+mkdir -p books && curl -L "https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/frankenstein.txt" -o books/frankenstein.txt
+```
+
+Use this exact command rather than copying the text by hand: the analysis
+depends on the file's exact whitespace.
+
+Then run BookBot on it:
+
 ```sh
 python3 main.py books/frankenstein.txt
 ```
