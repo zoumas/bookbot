@@ -1,6 +1,6 @@
 import pytest
 
-from stats import count_characters, count_words
+from stats import count_characters, count_words, sort_by_count
 
 
 @pytest.mark.parametrize(
@@ -30,3 +30,21 @@ def test_count_words(text: str, want: int) -> None:
 )
 def test_count_characters(text: str, want: dict[str, int]) -> None:
     assert count_characters(text) == want
+
+
+@pytest.mark.parametrize(
+    ("counts", "want"),
+    [
+        pytest.param({}, [], id="empty"),
+        pytest.param(
+            {"a": 1, "b": 3, "c": 2}, [("b", 3), ("c", 2), ("a", 1)], id="descending"
+        ),
+        pytest.param(
+            {"x": 2, "y": 2, "z": 5},
+            [("z", 5), ("x", 2), ("y", 2)],
+            id="tie-keeps-insertion-order",
+        ),
+    ],
+)
+def test_sort_by_count(counts: dict[str, int], want: list[tuple[str, int]]) -> None:
+    assert sort_by_count(counts) == want
